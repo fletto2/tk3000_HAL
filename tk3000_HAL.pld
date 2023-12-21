@@ -1,0 +1,49 @@
+GAL16V8
+IIEHAL
+
+CP  i2  i3  i4  i5  i6  i7  i8 i9 GND
+OE rf12 rf13 rf14 rf15 rf16 rf17 rf18 rf19 VCC
+
+/rf12.R = i2 & /i5 & /i6 & i7 & /rf15 & /rf16 & /rf19 +
+         /i2 & i5 & /i6 & i7 & /rf15 & /rf16 & /rf19 +
+         i6 & i7 & /rf15 & /rf16 & /rf18 +
+         /i7 & /rf15 & /rf16 & /rf18 +
+         /i7 & /i9 & rf15 & /rf16 & /rf18 +
+         i3 & /i4 & /i6 & i7 & /rf15 & /rf16 & /rf18
+
+/rf13.R = i2 & /i7 +
+         /i6 & i7 & rf13 & rf15 +
+         /i6 & i7 & rf13 & rf16 +
+         /i6 & i7 & rf13 & rf18 +
+         /i5 & /i6 & i7 & /rf15 & /rf16 & /rf18 +
+         i3 & /i4 & /i6 & i7 & /rf15 & /rf16 & /rf18 +
+         i6 & i7 +
+         /i7 & /i9
+
+/rf14.R = /rf15 & /rf16 & rf19 +
+         rf15 & rf16 +
+         rf15 & /rf19
+
+/rf15.R = rf15 & /rf16 & rf19 +
+         /rf15 & rf16 +
+         /rf15 & /rf19
+
+/rf16.R = /i2 & /rf15 & /rf18 +
+         /rf16 & /rf19 +
+         i2 & rf15 & /rf18
+
+/rf17.R = /rf15 & rf17 & /rf18 & /rf19 +
+         /i8 & rf15 & rf17 & /rf18 & /rf19 +
+         /rf17 & /rf19
+
+/rf18.R = rf16 & /rf19
+
+/rf19.R = rf16 +
+         i2 & /rf15 & /rf19 +
+         /i2 & rf15 & /rf18 +
+         i2 & i3 & i4 & rf15 & rf18 +
+         /i2 & /i3 & i4 & rf15 & rf18
+
+
+DESCRIPTION
+TK3000 IIe (Brazilian Apple IIe clone) HAL equations. Compile with GALasm.
